@@ -42,8 +42,6 @@ const TabletHeroSection = () => {
           </SearchText>
         </SearchTextContainer>
       </SearchInput>
-
-      <PromotionalBanner />
     </TabletContainer>
   );
 };
@@ -51,11 +49,6 @@ const TabletHeroSection = () => {
 const TabletContainer = styled.section`
   position: relative;
   overflow: hidden;
-
-  @media (min-width: ${theme.breakpoints.tablet}) and (max-width: ${theme
-      .breakpoints.desktop}) {
-    margin: 1rem 0px;
-  }
 `;
 
 // 애니메이션 키프레임 정의

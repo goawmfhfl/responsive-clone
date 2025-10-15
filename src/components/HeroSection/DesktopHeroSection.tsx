@@ -22,6 +22,8 @@ const Container = styled.section`
   width: 100vw;
   height: 25rem;
   overflow: hidden;
+
+  margin-bottom: 2.5rem;
 `;
 
 export default DesktopHeroSection;

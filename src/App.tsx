@@ -1,5 +1,6 @@
 import Header from "components/Header";
 import HeroSection from "components/HeroSection";
+import CategorySection from "components/CategorySection";
 import styled, { ThemeProvider } from "styled-components";
 import { theme } from "styles/theme";
 import { GlobalStyles } from "styles/GlobalStyles";
@@ -11,6 +12,7 @@ function App() {
       <Header />
       <Main>
         <HeroSection />
+        <CategorySection />
       </Main>
     </ThemeProvider>
   );

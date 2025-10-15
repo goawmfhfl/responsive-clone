@@ -5,6 +5,7 @@ import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
 import { Link } from "react-router-dom";
+import { theme } from "styles/theme";
 
 const PromotionalBanner = () => {
   const bannerData = [
@@ -64,7 +65,6 @@ const PromotionalBanner = () => {
 
 const BannerContainer = styled.div`
   width: 100%;
-  margin: 1rem 0;
   border-radius: 0.75rem;
   border: 1px solid #10b981;
   background: linear-gradient(135deg, #f0fdf4 0%, #ecfdf5 100%);
@@ -80,6 +80,10 @@ const BannerContainer = styled.div`
     display: flex;
     align-items: center;
     justify-content: center;
+  }
+
+  @media (min-width: ${theme.breakpoints.desktop}) {
+    margin: 1.25rem 0px;
   }
 `;
 
