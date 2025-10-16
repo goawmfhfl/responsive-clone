@@ -10,6 +10,7 @@ const Banner = () => {
       </Left>
       <Right>
         <Thumb
+          // 다른 여행 이미지로 바꿔주면 안되나?
           src="https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?q=80&w=640&auto=format&fit=crop"
           alt="banner"
         />

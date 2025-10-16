@@ -41,9 +41,17 @@ const Row = styled.div`
   grid-template-columns: 1fr 1fr 1fr;
   gap: 0.625rem;
 
+  @media (min-width: ${theme.breakpoints.desktop}) {
+    gap: 1rem;
+    margin: 0px;
+  }
+
   @media (min-width: ${theme.breakpoints.tablet}) {
+    margin: 0px;
     gap: 1rem;
   }
+
+  margin: 0px 1rem;
 `;
 
 const Card = styled.div`

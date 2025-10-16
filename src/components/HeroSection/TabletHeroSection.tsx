@@ -1,9 +1,6 @@
 import { useState, useEffect } from "react";
 import styled, { keyframes } from "styled-components";
 import { FiSearch } from "react-icons/fi";
-import { theme } from "styles/theme";
-import Carousel from "./Carousel";
-import PromotionalBanner from "./PromotionalBanner";
 
 const TabletHeroSection = () => {
   const [currentSearchIndex, setCurrentSearchIndex] = useState(0);

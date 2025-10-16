@@ -33,7 +33,7 @@ const Header = () => {
     };
 
     window.addEventListener("scroll", onScroll, { passive: true });
-    return () => window.removeEventListener("scroll", onScroll as any);
+    return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
   return (

@@ -74,10 +74,15 @@ const Container = styled.div`
   box-shadow: rgba(0, 0, 0, 0.02) 0px 0px 0.75rem 0px;
   @media (min-width: ${theme.breakpoints.tablet}) {
     gap: 1.5rem;
+    margin: 0px;
   }
+
   @media (min-width: ${theme.breakpoints.desktop}) {
     gap: 2rem;
+    margin: 0px;
   }
+
+  margin: 0px 1rem;
 `;
 
 const HeaderRow = styled.div`
