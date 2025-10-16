@@ -26,16 +26,17 @@ const Card = styled.div`
   gap: 0.75rem;
   background: linear-gradient(90deg, rgba(124, 212, 204, 0.15), #fff);
   border-radius: 0.75rem;
+  margin: 0.75rem 1rem;
   padding: 0.75rem 1rem;
 
-  ${media.tablet(`
+  @media (min-width: ${theme.breakpoints.tablet}) {
     padding: 1rem 1.25rem;
-  `)}
+  }
 
-  ${media.desktop(`
+  @media (min-width: ${theme.breakpoints.desktop}) {
     gap: 1rem;
     padding: 1rem 1.5rem;
-  `)}
+  }
 `;
 
 const Left = styled.div`
@@ -57,10 +58,10 @@ const Sub = styled.p`
 const Right = styled.div`
   width: 4rem;
   height: 4rem;
-  ${media.tablet(`
+  @media (min-width: ${theme.breakpoints.tablet}) {
     width: 4.5rem;
     height: 4.5rem;
-  `)}
+  }
 `;
 
 const Thumb = styled.img`

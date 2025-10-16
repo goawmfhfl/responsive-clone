@@ -15,6 +15,7 @@ import {
 } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import KeywordList from "./KeywordList";
+import Banner from "./Banner";
 
 const CategoryList = () => {
   const categories = [
@@ -58,6 +59,7 @@ const CategoryList = () => {
         })}
       </Grid>
       <KeywordList />
+      <Banner />
     </Container>
   );
 };
