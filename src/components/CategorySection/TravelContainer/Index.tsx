@@ -22,24 +22,12 @@ const Section = styled.section`
   border-radius: 1rem;
   box-shadow: ${theme.colors.shadow.light};
   padding: 1rem;
-  ${media.tablet(`
-    padding: 1.25rem;
-  `)}
-  ${media.desktop(`
-    padding: 1.5rem;
-  `)}
 `;
 
 const Inner = styled.div`
   display: flex;
   flex-direction: column;
   gap: 1rem;
-  ${media.tablet(`
-    gap: 1.25rem;
-  `)}
-  ${media.desktop(`
-    gap: 1.5rem;
-  `)}
 `;
 
 export default TravelContainer;

@@ -71,6 +71,8 @@ const BannerContainer = styled.div`
   overflow: hidden;
   position: relative;
 
+  margin: 1rem 0px;
+
   .swiper {
     width: 100%;
     height: 100%;

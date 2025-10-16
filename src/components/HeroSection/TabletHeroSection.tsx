@@ -35,7 +35,7 @@ const TabletHeroSection = () => {
         </SearchIcon>
         <SearchTextContainer>
           <SearchText>
-            Search for{" "}
+            Search for
             <AnimatedText key={currentSearchIndex}>
               "{searchSuggestions[currentSearchIndex]}"
             </AnimatedText>

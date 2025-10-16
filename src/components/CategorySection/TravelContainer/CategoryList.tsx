@@ -11,7 +11,9 @@ import {
   FaBus,
   FaWifi,
   FaShoppingBag,
+  FaArrowRight,
 } from "react-icons/fa";
+import { Link } from "react-router-dom";
 
 const CategoryList = () => {
   const categories = [
@@ -31,16 +33,25 @@ const CategoryList = () => {
     <Container>
       <HeaderRow>
         <Title>Travel</Title>
+        <ArrowRight>
+          <FaArrowRight />
+        </ArrowRight>
       </HeaderRow>
       <Grid>
         {categories.map((category) => {
           const IconComponent = category.icon;
           return (
             <Card key={category.name}>
-              <IconWrapper>
-                <IconComponent />
-              </IconWrapper>
-              <CardText>{category.name}</CardText>
+              <Link to={`/category/${category.name}`}>
+                <IconContainer>
+                  <IconWrapper>
+                    <IconBox>
+                      <IconComponent />
+                    </IconBox>
+                    <CardText>{category.name}</CardText>
+                  </IconWrapper>
+                </IconContainer>
+              </Link>
             </Card>
           );
         })}
@@ -63,26 +74,52 @@ const Container = styled.div`
 
 const HeaderRow = styled.div`
   display: flex;
+  -webkit-box-pack: justify;
+  justify-content: space-between;
+  -webkit-box-align: center;
   align-items: center;
-  gap: 0.5rem;
+  margin: 0px 1rem;
 `;
 
+const ArrowRight = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  @media (min-width: ${theme.breakpoints.desktop}) {
+    svg {
+      min-width: 1.25rem;
+      width: 1.25rem;
+      max-width: 1.25rem;
+      min-height: 1.25rem;
+      height: 1.25rem;
+      max-height: 1.25rem;
+    }
+  }
+
+  svg {
+    min-width: 1rem;
+    width: 1rem;
+    max-width: 1rem;
+    min-height: 1rem;
+    height: 1rem;
+    max-height: 1rem;
+  }
+`;
 const Title = styled.h2`
   font-size: ${theme.fontSize.lg};
   font-weight: ${theme.fontWeight.semibold};
 `;
 
 const Grid = styled.ul`
-  display: grid;
-  grid-template-columns: repeat(5, 1fr);
-  gap: 0.5rem;
-
   overflow: visible;
+  display: grid;
   row-gap: 1rem;
+  grid-template-columns: repeat(5, 1fr);
   margin: 0px 1rem;
 
   @media (min-width: ${theme.breakpoints.tablet}) {
-    gap: 0.5rem;
+    column-gap: 0px;
     grid-template-columns: repeat(10, 1fr);
   }
 `;
@@ -94,7 +131,6 @@ const Card = styled.li`
   align-items: center;
   text-align: center;
   border-radius: 0.75rem;
-  background: ${theme.colors.background.secondary};
   font-size: ${theme.fontSize.sm};
   padding: 0.5rem;
   position: relative;
@@ -105,36 +141,53 @@ const Card = styled.li`
   }
 `;
 
-const IconWrapper = styled.div`
-  position: absolute;
-  top: 0.75rem;
-  left: 50%;
-  transform: translateX(-50%);
+const IconContainer = styled.div`
   display: flex;
-  align-items: center;
-  justify-content: center;
-  color: ${theme.colors.brand.primary};
-  font-size: 1.25rem;
-  @media (min-width: ${theme.breakpoints.tablet}) {
-    top: 0.5rem;
-    font-size: 1.125rem;
+  flex-direction: column;
+`;
+
+const IconWrapper = styled.div`
+  display: inline-block;
+  vertical-align: middle;
+  text-align: center;
+
+  @media (min-width: ${theme.breakpoints.desktop}) {
+    gap: 0.5rem;
+    min-width: 3rem;
+    width: 3rem;
+    max-width: 3rem;
+    min-height: 3rem;
+    height: 3rem;
+    max-height: 3rem;
   }
 `;
 
+const IconBox = styled.div`
+  width: 3rem;
+  height: 3rem;
+  background: ${theme.colors.background.secondary};
+  display: flex;
+  align-items: center;
+  justify-content: center;
+`;
+
 const CardText = styled.span`
-  position: absolute;
-  bottom: 0.5rem;
-  left: 50%;
-  transform: translateX(-50%);
-  width: calc(100% - 1rem);
   font-size: ${theme.fontSize.base};
   font-weight: ${theme.fontWeight.medium};
   line-height: 1.2;
 
-  @media (min-width: ${theme.breakpoints.tablet}) {
-    font-size: ${theme.fontSize.xs};
-    bottom: 0.375rem;
+  @media (min-width: ${theme.breakpoints.desktop}) {
+    font-size: 0.875rem;
+    line-height: 1.3125rem;
   }
+
+  @media (min-width: ${theme.breakpoints.tablet}) {
+    font-size: 0.75rem;
+    line-height: 1.125rem;
+  }
+
+  font-size: 0.625rem;
+  line-height: 0.9375rem;
 `;
 
 export default CategoryList;
