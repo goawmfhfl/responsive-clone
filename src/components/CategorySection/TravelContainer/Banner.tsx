@@ -5,8 +5,8 @@ const Banner = () => {
   return (
     <Card>
       <Left>
-        <Heading>Explore K beauty</Heading>
-        <Sub>한국의 뷰티 트렌드를 한눈에</Sub>
+        <Heading>여행 탐험가들을 위한 모든 정보</Heading>
+        <Sub>여행 계획부터 여행 후까지 한눈에 보기</Sub>
       </Left>
       <Right>
         <Thumb

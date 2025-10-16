@@ -34,7 +34,7 @@ const CategoryList = () => {
   return (
     <Container>
       <HeaderRow>
-        <Title>Travel</Title>
+        <Title>여행</Title>
         <ArrowRight>
           <FaArrowRight />
         </ArrowRight>
@@ -68,6 +68,10 @@ const Container = styled.div`
   display: flex;
   flex-direction: column;
   gap: 1.25rem;
+  background-color: rgb(255, 255, 255);
+  border-radius: 0.75rem;
+  padding: 1.25rem 0px 1.5rem;
+  box-shadow: rgba(0, 0, 0, 0.02) 0px 0px 0.75rem 0px;
   @media (min-width: ${theme.breakpoints.tablet}) {
     gap: 1.5rem;
   }
