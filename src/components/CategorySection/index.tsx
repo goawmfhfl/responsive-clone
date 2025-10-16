@@ -16,7 +16,7 @@ const Container = styled.section`
 
   @media (min-width: ${theme.breakpoints.desktop}) {
     margin-bottom: 1.25rem;
-    padding: 1.5rem 0px 2rem;
+    padding: 1.5rem 0px 1.5rem;
     gap: 1.5rem;
   }
 

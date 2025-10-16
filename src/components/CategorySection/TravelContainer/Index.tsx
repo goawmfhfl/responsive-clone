@@ -7,11 +7,9 @@ import { theme } from "styles/theme";
 const TravelContainer = () => {
   return (
     <Section>
-      <Inner>
-        <CategoryList />
-        <KeywordList />
-        <Banner />
-      </Inner>
+      <CategoryList />
+      <KeywordList />
+      <Banner />
     </Section>
   );
 };
@@ -21,12 +19,6 @@ const Section = styled.section`
   border-radius: 1rem;
   box-shadow: ${theme.colors.shadow.light};
   padding: 1rem;
-`;
-
-const Inner = styled.div`
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
 `;
 
 export default TravelContainer;
