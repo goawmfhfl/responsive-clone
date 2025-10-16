@@ -2,7 +2,6 @@ import CategoryList from "./CategoryList";
 import KeywordList from "./KeywordList";
 import Banner from "./Banner";
 import styled from "styled-components";
-import { media } from "styles/media";
 import { theme } from "styles/theme";
 
 const TravelContainer = () => {

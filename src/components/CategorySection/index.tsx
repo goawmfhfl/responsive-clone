@@ -1,13 +1,11 @@
 import styled from "styled-components";
 import TravelContainer from "./TravelContainer/CategoryList";
-import CategoryContainer from "./CategoryContainer";
-import { media } from "styles/media";
+import { theme } from "styles/theme";
 
 const CategorySection = () => {
   return (
     <Container>
       <TravelContainer />
-      <CategoryContainer />
     </Container>
   );
 };
@@ -16,7 +14,7 @@ const Container = styled.section`
   display: flex;
   flex-direction: column;
 
-  ${media.desktop} {
+  @media (min-width: ${theme.breakpoints.desktop}) {
     margin-bottom: 1.25rem;
     padding: 1.5rem 0px 2rem;
     gap: 1.5rem;

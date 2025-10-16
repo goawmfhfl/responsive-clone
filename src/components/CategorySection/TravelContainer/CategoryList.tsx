@@ -14,6 +14,7 @@ import {
   FaArrowRight,
 } from "react-icons/fa";
 import { Link } from "react-router-dom";
+import KeywordList from "./KeywordList";
 
 const CategoryList = () => {
   const categories = [
@@ -56,6 +57,7 @@ const CategoryList = () => {
           );
         })}
       </Grid>
+      <KeywordList />
     </Container>
   );
 };
@@ -63,12 +65,12 @@ const CategoryList = () => {
 const Container = styled.div`
   display: flex;
   flex-direction: column;
-  gap: 1rem;
+  gap: 1.25rem;
   @media (min-width: ${theme.breakpoints.tablet}) {
-    gap: 1.25rem;
+    gap: 1.5rem;
   }
   @media (min-width: ${theme.breakpoints.desktop}) {
-    gap: 1.5rem;
+    gap: 2rem;
   }
 `;
 
