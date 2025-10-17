@@ -2,6 +2,10 @@ import React, { useState } from "react";
 import styled from "styled-components";
 import { theme } from "styles/theme";
 
+// 이미지 로딩 실패 시 사용할 더미 이미지 (Unsplash)
+const FALLBACK_IMAGE =
+  "https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=400&h=300&fit=crop&auto=format";
+
 export interface FeedCardProps {
   id: number;
   image: string;
@@ -38,6 +42,8 @@ const FeedCard: React.FC<FeedCardProps> = ({
   cardWidth = "100%",
 }) => {
   const [isFavorite, setIsFavorite] = useState(initialFavorite);
+  const [imageError, setImageError] = useState(false);
+  const [imageLoading, setImageLoading] = useState(true);
 
   const handleHeartClick = () => {
     const newFavoriteState = !isFavorite;
@@ -45,12 +51,33 @@ const FeedCard: React.FC<FeedCardProps> = ({
     onHeartClick?.(id, newFavoriteState);
   };
 
+  const handleImageError = () => {
+    setImageError(true);
+    setImageLoading(false);
+  };
+
+  const handleImageLoad = () => {
+    setImageLoading(false);
+  };
+
   const displayPrice = salePrice || originalPrice;
+  const currentImage = imageError ? FALLBACK_IMAGE : image;
 
   return (
     <CardContainer $cardWidth={cardWidth}>
       <ImageContainer $imageHeight={imageHeight}>
-        <CardImage src={image} alt={title} />
+        <CardImage
+          src={currentImage}
+          alt={title}
+          onError={handleImageError}
+          onLoad={handleImageLoad}
+        />
+        {imageLoading && (
+          <ImageLoadingOverlay>이미지 로딩 중...</ImageLoadingOverlay>
+        )}
+        {imageError && (
+          <ImageErrorOverlay>이미지가 존재하지 않습니다</ImageErrorOverlay>
+        )}
         {showHeart && (
           <HeartButton onClick={handleHeartClick} $isFavorite={isFavorite}>
             <HeartIcon $isFavorite={isFavorite}>
@@ -115,6 +142,7 @@ const CardImage = styled.img`
   width: 100%;
   height: 100%;
   object-fit: cover;
+  object-position: center;
   transition: ${theme.transition.normal};
 
   ${CardContainer}:hover & {
@@ -229,6 +257,38 @@ const AdditionalBadge = styled.div`
   padding: 4px 8px;
   border-radius: ${theme.borderRadius.sm};
   width: fit-content;
+`;
+
+const ImageLoadingOverlay = styled.div`
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(255, 255, 255, 0.9);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: ${theme.fontSize.sm};
+  color: ${theme.colors.text.secondary};
+  font-weight: ${theme.fontWeight.medium};
+`;
+
+const ImageErrorOverlay = styled.div`
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: ${theme.fontSize.sm};
+  color: white;
+  font-weight: ${theme.fontWeight.medium};
+  text-align: center;
+  padding: ${theme.spacing.md};
 `;
 
 export default FeedCard;
