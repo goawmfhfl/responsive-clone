@@ -15,48 +15,48 @@ const Keywords = () => {
   const categories: CategoryItem[] = [
     {
       id: "accommodation",
-      name: "숙소",
+      name: "숙소 데이터",
       icon: "https://images.unsplash.com/photo-1566073771259-6a8506099945?q=80&w=200&auto=format&fit=crop",
     },
     {
       id: "restaurant",
-      name: "맛집",
+      name: "맛집 데이터",
       icon: "https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?q=80&w=200&auto=format&fit=crop",
     },
     {
       id: "cafe",
-      name: "카페",
+      name: "카페 데이터",
       icon: "https://images.unsplash.com/photo-1501339847302-ac426a4a7cbb?q=80&w=200&auto=format&fit=crop",
       isNew: true,
     },
     {
       id: "attractions",
-      name: "관광지",
+      name: "관광지 데이터",
       icon: "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?q=80&w=200&auto=format&fit=crop",
     },
     {
       id: "shopping",
-      name: "쇼핑",
+      name: "쇼핑 데이터",
       icon: "https://images.unsplash.com/photo-1441986300917-64674bd600d8?q=80&w=200&auto=format&fit=crop",
     },
     {
       id: "transport",
-      name: "교통",
+      name: "교통 데이터",
       icon: "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?q=80&w=200&auto=format&fit=crop",
     },
     {
       id: "culture",
-      name: "문화체험",
+      name: "문화체험 데이터",
       icon: "https://images.unsplash.com/photo-1481277542470-605612bd2d61?q=80&w=200&auto=format&fit=crop",
     },
     {
       id: "nature",
-      name: "자연",
+      name: "자연 데이터",
       icon: "https://images.unsplash.com/photo-1469474968028-56623f02e42e?q=80&w=200&auto=format&fit=crop",
     },
     {
       id: "nightlife",
-      name: "야경",
+      name: "야경 데이터",
       icon: "https://images.unsplash.com/photo-1513475382585-d06e58bcb0e0?q=80&w=200&auto=format&fit=crop",
     },
   ];
@@ -87,27 +87,23 @@ const Keywords = () => {
 };
 
 const KeywordsContainer = styled.div`
-  display: grid;
-  grid-template-columns: repeat(5, 1fr);
-  gap: 0.5rem;
-  padding: 1rem 0;
-  max-width: 100%;
-
-  @media (max-width: 768px) {
-    grid-template-columns: repeat(3, 1fr);
-  }
-
-  @media (max-width: 480px) {
-    grid-template-columns: repeat(2, 1fr);
-  }
+  display: flex;
+  flex-wrap: wrap;
+  -webkit-box-pack: center;
+  justify-content: center;
+  padding: 1.5rem 5rem 2rem;
+  gap: 0.75rem;
 `;
 
 const CategoryItem = styled.div<{ $isActive?: boolean }>`
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-  padding: 0.5rem 0.75rem;
   border-radius: 1.25rem;
+  cursor: pointer;
+  display: flex;
+  -webkit-box-align: center;
+  align-items: center;
+  padding: 0.4375rem 1rem 0.4375rem 0.5rem;
+  gap: 0.5rem;
+
   background: ${(props) =>
     props.$isActive ? theme.colors.brand.primary : "white"};
   color: ${(props) => (props.$isActive ? "white" : theme.colors.text.primary)};

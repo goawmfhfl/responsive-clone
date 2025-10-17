@@ -1,13 +1,14 @@
-import React from "react";
 import styled from "styled-components";
 import Keywords from "./Keywords";
 import { theme } from "styles/theme";
+import FeedContainer from "./FeedContainer";
 
 const InsightFeedSection = () => {
   return (
     <Section>
       <Title> 인사이트 피드 </Title>
       <Keywords />
+      <FeedContainer />
     </Section>
   );
 };
