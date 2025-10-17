@@ -1,9 +1,10 @@
-import Header from "components/Header";
+import Header from "components/Common/Header";
 import HeroSection from "components/HeroSection";
 import CategorySection from "components/CategorySection";
 import styled, { ThemeProvider } from "styled-components";
 import { theme } from "styles/theme";
 import { GlobalStyles } from "styles/GlobalStyles";
+import InsightFeedSection from "components/InsightFeedSection";
 
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
       <Main>
         <HeroSection />
         <CategorySection />
+        <InsightFeedSection />
       </Main>
     </ThemeProvider>
   );

@@ -3,7 +3,7 @@ import styled from "styled-components";
 
 import Tablet from "./TabletHeroSection";
 import Desktop from "./DesktopHeroSection";
-import PromotionalBanner from "../common/PromotionalBanner";
+import PromotionalBanner from "../Common/PromotionalBanner";
 
 const HeroSection = () => {
   const isTablet = useMediaQuery({ maxWidth: 920 });

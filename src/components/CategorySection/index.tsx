@@ -2,7 +2,7 @@ import styled from "styled-components";
 import TravelContainer from "./TravelContainer/CategoryList";
 import { theme } from "styles/theme";
 import CategoryContainer from "./CategoryContainer";
-import PromotionalBanner from "components/common/PromotionalBanner";
+import PromotionalBanner from "components/Common/PromotionalBanner";
 
 const CategorySection = () => {
   const banners = [
