@@ -9,8 +9,27 @@ interface CategoryItem {
   isNew?: boolean;
 }
 
-const Keywords = () => {
-  const [activeCategory, setActiveCategory] = React.useState("accommodation");
+interface KeywordsProps {
+  activeCategory?: string;
+  onCategoryChange?: (categoryId: string) => void;
+}
+
+const Keywords: React.FC<KeywordsProps> = ({
+  activeCategory: propActiveCategory,
+  onCategoryChange,
+}) => {
+  const [internalActiveCategory, setInternalActiveCategory] =
+    React.useState("accommodation");
+
+  const activeCategory = propActiveCategory || internalActiveCategory;
+
+  const handleCategoryClick = (categoryId: string) => {
+    if (onCategoryChange) {
+      onCategoryChange(categoryId);
+    } else {
+      setInternalActiveCategory(categoryId);
+    }
+  };
 
   const categories: CategoryItem[] = [
     {
@@ -54,11 +73,6 @@ const Keywords = () => {
       name: "자연 데이터",
       icon: "https://images.unsplash.com/photo-1469474968028-56623f02e42e?q=80&w=200&auto=format&fit=crop",
     },
-    {
-      id: "nightlife",
-      name: "야경 데이터",
-      icon: "https://images.unsplash.com/photo-1513475382585-d06e58bcb0e0?q=80&w=200&auto=format&fit=crop",
-    },
   ];
 
   return (
@@ -67,7 +81,7 @@ const Keywords = () => {
         <CategoryItem
           key={category.id}
           $isActive={activeCategory === category.id}
-          onClick={() => setActiveCategory(category.id)}
+          onClick={() => handleCategoryClick(category.id)}
         >
           <IconContainer>
             <CategoryIcon src={category.icon} alt={category.name} />
