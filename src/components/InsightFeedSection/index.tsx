@@ -6,6 +6,22 @@ import { theme } from "styles/theme";
 import FeedContainer from "./FeedContainer";
 import FeedCard from "components/Common/FeedCard";
 import { mockData, TravelCardData } from "./travelData";
+import PromotionalBanner from "components/Common/PromotionalBanner";
+
+const promotionalBanners = [
+  {
+    id: 1,
+    image:
+      "https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?w=1200&h=300&fit=crop",
+    link: "/promotional-banner-1",
+  },
+  {
+    id: 2,
+    image:
+      "https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?w=1200&h=300&fit=crop",
+    link: "/promotional-banner-2",
+  },
+];
 
 const InsightFeedSection = () => {
   const [expandedItems, setExpandedItems] = useState<Set<string>>(new Set());
@@ -196,6 +212,13 @@ const InsightFeedSection = () => {
           ))}
         </MobileList>
       </MobileLayout>
+      <PromotionalBanner
+        banners={promotionalBanners}
+        autoPlay={true}
+        showPagination={true}
+        onPlusClick={() => {}}
+        size="m"
+      />
     </Section>
   );
 };

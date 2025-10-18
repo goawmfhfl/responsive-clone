@@ -5,6 +5,7 @@ import styled, { ThemeProvider } from "styled-components";
 import { theme } from "styles/theme";
 import { GlobalStyles } from "styles/GlobalStyles";
 import InsightFeedSection from "components/InsightFeedSection";
+import InfoSection from "components/InfoSection";
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
         <HeroSection />
         <CategorySection />
         <InsightFeedSection />
+        <InfoSection />
       </Main>
     </ThemeProvider>
   );
