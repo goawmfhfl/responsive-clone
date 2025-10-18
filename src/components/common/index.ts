@@ -1,4 +1,5 @@
 export { default as Header } from "./Header";
+export { default as Footer } from "./Footer";
 export { default as PromotionalBanner } from "./PromotionalBanner";
 export { default as FeedCard } from "./FeedCard";
 export { default as InfoCard } from "./InfoCard";
@@ -6,3 +7,4 @@ export { default as Pagination } from "./Pagination";
 export type { FeedCardProps } from "./FeedCard";
 export type { InfoCardProps } from "./InfoCard";
 export type { PaginationProps } from "./Pagination";
+export type { FooterProps, PolicyLink, SocialLink } from "./Footer";
